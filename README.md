@@ -43,8 +43,12 @@ See article: https://thoughtbot.com/blog/let-s-setup-your-ios-environments
 ### Architecture
 - Coordinators are set up to handle the navigation flow.
 - Configuration is set up for Development, Staging and Production.
-- MVVM is implemented as an example
+- MVVM is implemented as an example.
 
 ### Renaming the project
 
 https://stackoverflow.com/questions/33370175/how-do-i-completely-rename-an-xcode-project-i-e-inclusive-of-folders
+
+### TODO
+- Automatically update a repo from the template.
+https://stackoverflow.com/questions/56577184/github-pull-changes-from-a-template-repository/56577320
