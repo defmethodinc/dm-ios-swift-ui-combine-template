@@ -52,3 +52,9 @@ https://stackoverflow.com/questions/33370175/how-do-i-completely-rename-an-xcode
 ### TODO
 - Automatically update a repo from the template.
 https://stackoverflow.com/questions/56577184/github-pull-changes-from-a-template-repository/56577320
+- Add Unit Tests with Quick and Nimble
+- Add UITests with Cucumberish
+- Handle Dark Mode
+- localization/internationalization
+- Create an auth server that can be spin up with this app
+- Add Build phase before the `Compile Sources phase` to generate code for Environment variables
