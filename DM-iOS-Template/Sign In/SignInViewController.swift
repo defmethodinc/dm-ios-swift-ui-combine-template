@@ -6,7 +6,7 @@ protocol SignInFlowDelegate: class {
 }
 
 protocol SignInViewControllerDelegate: class {
-  func didFail(with error: SignInError)
+  func didFail(with error: ServerRequestError)
   func didSucceed()
 }
 
@@ -49,7 +49,7 @@ extension SignInViewController {
 
 // MARK: UI Methods
 private extension SignInViewController {
-  func displayError(_ error: SignInError) {
+  func displayError(_ error: ServerRequestError) {
     self.errorLabel.isHidden = false
     switch error {
     case .serverError(let message):
@@ -78,7 +78,7 @@ private extension SignInViewController {
 
 // MARK: SignInViewControllerDelegate
 extension SignInViewController: SignInViewControllerDelegate {
-  func didFail(with error: SignInError) {
+  func didFail(with error: ServerRequestError) {
     DispatchQueue.main.async {
       self.displayError(error)
     }

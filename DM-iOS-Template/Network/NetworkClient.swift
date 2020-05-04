@@ -1,13 +1,13 @@
 import Foundation
 
 protocol NetworkClientType {
-  func verify(with phoneNumber: String, onCompletion: @escaping (Result<User, SignInError>) -> Void)
+  func verify(with phoneNumber: String, onCompletion: @escaping (Result<User, ServerRequestError>) -> Void)
 }
 
 class NetworkClient: NetworkClientType {
   
-  func verify(with phoneNumber: String, onCompletion: @escaping (Result<User, SignInError>) -> Void) {
-    let url = Environment.apiUrl.appendingPathComponent("users/verify")
+  func verify(with phoneNumber: String, onCompletion: @escaping (Result<User, ServerRequestError>) -> Void) {
+    let url = Config.apiUrl.appendingPathComponent("users/verify")
     let parameters = ["phone_number": phoneNumber]
     
     NetworkClient.request(url: url, parameters: parameters) { data, response, error in
