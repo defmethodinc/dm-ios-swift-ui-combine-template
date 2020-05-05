@@ -38,6 +38,10 @@
 		5EAC9AD52460B26F006A2A1F /* NetworkPublisher+Creations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9AD42460B26F006A2A1F /* NetworkPublisher+Creations.swift */; };
 		5EAC9AD92460B6B0006A2A1F /* CreationsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9AD82460B6B0006A2A1F /* CreationsListItemView.swift */; };
 		5EAC9ADB2460B746006A2A1F /* CreationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9ADA2460B746006A2A1F /* CreationDetailsView.swift */; };
+		5EAC9ADE2461E6DC006A2A1F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9ADD2461E6DC006A2A1F /* ImageCache.swift */; };
+		5EAC9AE12461E73E006A2A1F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9AE02461E73E006A2A1F /* ImageLoader.swift */; };
+		5EAC9AE32461E7D5006A2A1F /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9AE22461E7D5006A2A1F /* AsyncImageView.swift */; };
+		5EAC9AE62461E8C7006A2A1F /* CreationListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9AE52461E8C7006A2A1F /* CreationListItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		5EAC9AD42460B26F006A2A1F /* NetworkPublisher+Creations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkPublisher+Creations.swift"; sourceTree = "<group>"; };
 		5EAC9AD82460B6B0006A2A1F /* CreationsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationsListItemView.swift; sourceTree = "<group>"; };
 		5EAC9ADA2460B746006A2A1F /* CreationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationDetailsView.swift; sourceTree = "<group>"; };
+		5EAC9ADD2461E6DC006A2A1F /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		5EAC9AE02461E73E006A2A1F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		5EAC9AE22461E7D5006A2A1F /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		5EAC9AE52461E8C7006A2A1F /* CreationListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationListItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,7 @@
 		06A9C531242D3855004E9D2A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				5EAC9ADC2461E6D2006A2A1F /* Images */,
 				06A9C539242D400F004E9D2A /* Coordinator.swift */,
 				06A9C52F242BD91C004E9D2A /* DefaultsKey.swift */,
 				06A9C532242D3879004E9D2A /* JSONDecoderWrapper.swift */,
@@ -237,8 +246,19 @@
 				5EAC9AD42460B26F006A2A1F /* NetworkPublisher+Creations.swift */,
 				5EAC9AD82460B6B0006A2A1F /* CreationsListItemView.swift */,
 				5EAC9ADA2460B746006A2A1F /* CreationDetailsView.swift */,
+				5EAC9AE52461E8C7006A2A1F /* CreationListItemViewModel.swift */,
 			);
 			path = Creations;
+			sourceTree = "<group>";
+		};
+		5EAC9ADC2461E6D2006A2A1F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5EAC9ADD2461E6DC006A2A1F /* ImageCache.swift */,
+				5EAC9AE02461E73E006A2A1F /* ImageLoader.swift */,
+				5EAC9AE22461E7D5006A2A1F /* AsyncImageView.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +365,7 @@
 				06A9C53C242D4033004E9D2A /* AppCoordinator.swift in Sources */,
 				0678B26F242565D100D4973C /* SignInViewController.swift in Sources */,
 				065867A2242E8D7E00AB793B /* Storyboarded.swift in Sources */,
+				5EAC9AE12461E73E006A2A1F /* ImageLoader.swift in Sources */,
 				06A9C538242D3FA8004E9D2A /* InterimFeedViewController.swift in Sources */,
 				0678B26B242565D100D4973C /* AppDelegate.swift in Sources */,
 				066293BC242D4CB000432B46 /* SignInCoordinator.swift in Sources */,
@@ -358,16 +379,19 @@
 				5EAC9AD12460AF3D006A2A1F /* CreationsListView.swift in Sources */,
 				5EAC9ADB2460B746006A2A1F /* CreationDetailsView.swift in Sources */,
 				5EAC9AD92460B6B0006A2A1F /* CreationsListItemView.swift in Sources */,
+				5EAC9AE62461E8C7006A2A1F /* CreationListItemViewModel.swift in Sources */,
 				06F2EDF8242A849E00E89C5B /* User.swift in Sources */,
 				5EAC9AD52460B26F006A2A1F /* NetworkPublisher+Creations.swift in Sources */,
 				5EAC9AD32460AF9B006A2A1F /* CreationsListViewModel.swift in Sources */,
 				5EAC9ACA2460AE1C006A2A1F /* NetworkPublisher.swift in Sources */,
 				06A9C530242BD91C004E9D2A /* DefaultsKey.swift in Sources */,
 				06A9C53E242D4216004E9D2A /* FeedCoordinator.swift in Sources */,
+				5EAC9AE32461E7D5006A2A1F /* AsyncImageView.swift in Sources */,
 				0676B5F72433D0C60096CFD2 /* Config.swift in Sources */,
 				5EAC9ACF2460AE90006A2A1F /* Photo.swift in Sources */,
 				06F2EDFA242A867D00E89C5B /* ServerRequestError.swift in Sources */,
 				06A9C53A242D400F004E9D2A /* Coordinator.swift in Sources */,
+				5EAC9ADE2461E6DC006A2A1F /* ImageCache.swift in Sources */,
 				06A9FB64242A6D9D008B59DE /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
