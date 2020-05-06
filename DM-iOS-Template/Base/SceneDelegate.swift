@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,9 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window.windowScene = windowScene
     
-    let applicationCoordinator = AppCoordinator(window: window)
-    self.applicationCoordinator = applicationCoordinator
-    applicationCoordinator.start()
+    let viewModel = CreationsListViewModel()
+    window.rootViewController = UIHostingController(rootView: CreationsListView(viewModel: viewModel))
+
+    window.makeKeyAndVisible()
     
     self.window = window
   }
