@@ -35,7 +35,8 @@ extension CreationsListViewModel {
           guard let self = self else { return }
           switch completion {
           case .failure(let error):
-            self.error = .serverError(message: error.localizedDescription)
+            print("Failure loading Creations: \(error)")
+            self.error = error
           case .finished:
             print("Finished receiving Creations.")
           }

@@ -18,8 +18,8 @@ class CreationListItemViewModel {
     creation.name
   }
 
-  var summary: String {
-    creation.summary ?? ""
+  var description: String {
+    creation.description ?? ""
   }
 
   var headerPhoto: Photo {

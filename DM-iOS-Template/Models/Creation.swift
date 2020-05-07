@@ -17,6 +17,6 @@ struct CreationResponse: Codable {
 struct Creation: Identifiable, Codable {
   var id: String
   var name: String
-  var summary: String?
+  var description: String?
   var photos: [Photo] = []
 }

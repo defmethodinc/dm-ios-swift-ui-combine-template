@@ -22,7 +22,7 @@ struct CreationsListItemView: View {
       ).aspectRatio(contentMode: .fit)
       Text(viewModel.name)
         .font(.title)
-      Text(viewModel.summary)
+      Text(viewModel.description)
     }
   }
 }
@@ -36,7 +36,7 @@ struct CreationsListItemView_Previews: PreviewProvider {
     let creation = Creation(
       id: "123",
       name: "A creation",
-      summary: "The coolest creation ever created!",
+      description: "The coolest creation ever created!",
       photos: photos
     )
     let viewModel = CreationListItemViewModel(creation: creation)

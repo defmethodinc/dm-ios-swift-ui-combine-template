@@ -17,13 +17,14 @@ class NetworkPublisher {
   }
 
   internal func fetchAndPublish<T: Decodable>(from url: URL) -> AnyPublisher<T, ServerRequestError> {
-
-    return session.dataTaskPublisher(for: URLRequest(url: url))
+    session.dataTaskPublisher(for: URLRequest(url: url))
       .retry(1)
       .mapError { error in
         .serverError(message: error.localizedDescription)
     }
-    .flatMap { pair in self.decode(pair.data) }
+    .flatMap { pair in
+      self.decode(pair.data)
+    }
     .eraseToAnyPublisher()
   }
 
@@ -34,7 +35,8 @@ class NetworkPublisher {
     return Just(data)
       .decode(type: T.self, decoder: decoder)
       .mapError { error in
-        .parsing(message: error.localizedDescription)
+        print("Decoding error: \(error)")
+        return .parsing(message: error.localizedDescription)
     }
     .eraseToAnyPublisher()
   }
