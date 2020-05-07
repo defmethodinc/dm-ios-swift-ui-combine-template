@@ -17,11 +17,14 @@ struct CreationsListView: View {
 
   var body: some View {
     NavigationView {
+      viewModel.error.map { error in
+        Text("Error occured: \(error.localizedDescription)")
+      }
       List(viewModel.creations, id: \.id) { creation in
         Text(creation.name)
-
-      }.onAppear(perform: viewModel.loadCreations)
-        .navigationBarTitle("My Creations")
+      }
+      .onAppear(perform: viewModel.loadCreations)
+      .navigationBarTitle("My Creations")
     }
   }
 }

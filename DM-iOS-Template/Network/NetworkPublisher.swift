@@ -20,7 +20,8 @@ class NetworkPublisher {
     session.dataTaskPublisher(for: URLRequest(url: url))
       .retry(1)
       .mapError { error in
-        .serverError(message: error.localizedDescription)
+        print("URLSession Error: \(error.localizedDescription)")
+        return .serverError(message: error.localizedDescription)
     }
     .flatMap { pair in
       self.decode(pair.data)
