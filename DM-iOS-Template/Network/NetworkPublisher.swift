@@ -23,8 +23,8 @@ class NetworkPublisher {
         print("URLSession Error: \(error.localizedDescription)")
         return .serverError(message: error.localizedDescription)
     }
-    .flatMap { pair in
-      self.decode(pair.data)
+    .flatMap { response in
+      self.decode(response.data)
     }
     .eraseToAnyPublisher()
   }

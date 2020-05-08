@@ -9,13 +9,14 @@
 import SwiftUI
 import Combine
 
+
 class CreationsListViewModel: ObservableObject {
   private var cancellable: AnyCancellable?
-  private var networkPublisher: NetworkPublisherCreations
+  private var networkPublisher: NetworkPublisherCreationsType
   @Published var creations: [Creation] = []
   @Published var error: ServerRequestError?
 
-  init(networkPublisher: NetworkPublisherCreations = NetworkPublisher()) {
+  init(networkPublisher: NetworkPublisherCreationsType = NetworkPublisher()) {
     self.networkPublisher = networkPublisher
   }
   

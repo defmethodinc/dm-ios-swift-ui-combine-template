@@ -9,11 +9,11 @@
 import Foundation
 import Combine
 
-protocol NetworkPublisherCreations {
+protocol NetworkPublisherCreationsType {
   func publishCreations() -> AnyPublisher<CreationResponse, ServerRequestError>
 }
 
-extension NetworkPublisher: NetworkPublisherCreations {
+extension NetworkPublisher: NetworkPublisherCreationsType {
   func publishCreations() -> AnyPublisher<CreationResponse, ServerRequestError> {
     let url =  Config.apiUrl.appendingPathComponent("api/v1/creations")
     return fetchAndPublish(from: url)

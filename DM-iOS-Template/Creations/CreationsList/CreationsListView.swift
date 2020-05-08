@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CreationsListView: View {
   @ObservedObject var viewModel: CreationsListViewModel
@@ -21,16 +22,19 @@ struct CreationsListView: View {
         Text("Error occured: \(error.localizedDescription)")
       }
       List(viewModel.creations, id: \.id) { creation in
-        Text(creation.name)
+        CreationsListItemView(viewModel: CreationListItemViewModel(creation: creation))
       }
       .onAppear(perform: viewModel.loadCreations)
-      .navigationBarTitle("My Creations")
+      .navigationBarTitle("Creations")
     }
   }
 }
 
 struct CreationsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreationsListView()
-    }
+
+  static var previews: some View {
+    let creationResponse = CreationResponse.stub()
+    let viewModel = CreationsListViewModel(networkPublisher: MockNetworkPublisher(creationResponse: creationResponse))
+    return CreationsListView(viewModel: viewModel)
+  }
 }

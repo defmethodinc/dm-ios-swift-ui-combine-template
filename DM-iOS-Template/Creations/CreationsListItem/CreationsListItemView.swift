@@ -18,12 +18,14 @@ struct CreationsListItemView: View {
         url: viewModel.headerPhotoUrl,
         placeholder: Text("Loading..."),
         cache: self.cache,
-        configuration: { $0.resizable() }
+        configuration: {
+          $0.resizable()
+      }
       ).aspectRatio(contentMode: .fit)
       Text(viewModel.name)
         .font(.title)
       Text(viewModel.description)
-    }
+    }.frame(minHeight: 300)
   }
 }
 

@@ -30,6 +30,16 @@
 		06A9FB64242A6D9D008B59DE /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9FB63242A6D9D008B59DE /* NetworkClient.swift */; };
 		06F2EDF8242A849E00E89C5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2EDF7242A849E00E89C5B /* User.swift */; };
 		06F2EDFA242A867D00E89C5B /* ServerRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2EDF9242A867D00E89C5B /* ServerRequestError.swift */; };
+		5E692F482465BD1500927FFB /* MockNetworkPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F472465BD1500927FFB /* MockNetworkPublisher.swift */; };
+		5E692F492465BD1500927FFB /* MockNetworkPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F472465BD1500927FFB /* MockNetworkPublisher.swift */; };
+		5E692F4C2465C44000927FFB /* CreationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F4B2465C44000927FFB /* CreationStub.swift */; };
+		5E692F4D2465C44000927FFB /* CreationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F4B2465C44000927FFB /* CreationStub.swift */; };
+		5E692F502465C49E00927FFB /* Stubbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F4E2465C49E00927FFB /* Stubbed.swift */; };
+		5E692F512465C51E00927FFB /* Stubbed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F4E2465C49E00927FFB /* Stubbed.swift */; };
+		5E692F542465C53F00927FFB /* PhotoStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F532465C53F00927FFB /* PhotoStub.swift */; };
+		5E692F552465C53F00927FFB /* PhotoStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F532465C53F00927FFB /* PhotoStub.swift */; };
+		5E692F572465C56200927FFB /* CreationResponseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F562465C56200927FFB /* CreationResponseStub.swift */; };
+		5E692F582465C56200927FFB /* CreationResponseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E692F562465C56200927FFB /* CreationResponseStub.swift */; };
 		5EAC9ACA2460AE1C006A2A1F /* NetworkPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9AC92460AE1C006A2A1F /* NetworkPublisher.swift */; };
 		5EAC9ACC2460AE4A006A2A1F /* Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9ACB2460AE4A006A2A1F /* Creation.swift */; };
 		5EAC9ACF2460AE90006A2A1F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAC9ACE2460AE90006A2A1F /* Photo.swift */; };
@@ -85,6 +95,11 @@
 		06A9FB63242A6D9D008B59DE /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		06F2EDF7242A849E00E89C5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		06F2EDF9242A867D00E89C5B /* ServerRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequestError.swift; sourceTree = "<group>"; };
+		5E692F472465BD1500927FFB /* MockNetworkPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkPublisher.swift; sourceTree = "<group>"; };
+		5E692F4B2465C44000927FFB /* CreationStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationStub.swift; sourceTree = "<group>"; };
+		5E692F4E2465C49E00927FFB /* Stubbed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubbed.swift; sourceTree = "<group>"; };
+		5E692F532465C53F00927FFB /* PhotoStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStub.swift; sourceTree = "<group>"; };
+		5E692F562465C56200927FFB /* CreationResponseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationResponseStub.swift; sourceTree = "<group>"; };
 		5EAC9AC92460AE1C006A2A1F /* NetworkPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPublisher.swift; sourceTree = "<group>"; };
 		5EAC9ACB2460AE4A006A2A1F /* Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creation.swift; sourceTree = "<group>"; };
 		5EAC9ACE2460AE90006A2A1F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -167,6 +182,8 @@
 		0678B280242565D200D4973C /* DM-iOS-TemplateTests */ = {
 			isa = PBXGroup;
 			children = (
+				5E692F4A2465C43600927FFB /* Stubs */,
+				5E692F462465BCFC00927FFB /* Mocks */,
 				0678B281242565D200D4973C /* PagerTests.swift */,
 				0678B283242565D200D4973C /* Info.plist */,
 			);
@@ -262,6 +279,25 @@
 				5EAC9ADA2460B746006A2A1F /* CreationDetailsView.swift */,
 			);
 			path = CreationDetails;
+			sourceTree = "<group>";
+		};
+		5E692F462465BCFC00927FFB /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5E692F472465BD1500927FFB /* MockNetworkPublisher.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		5E692F4A2465C43600927FFB /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				5E692F4B2465C44000927FFB /* CreationStub.swift */,
+				5E692F4E2465C49E00927FFB /* Stubbed.swift */,
+				5E692F532465C53F00927FFB /* PhotoStub.swift */,
+				5E692F562465C56200927FFB /* CreationResponseStub.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 		5EAC9AC72460ADDF006A2A1F /* Creations */ = {
@@ -389,16 +425,19 @@
 				06A9C53C242D4033004E9D2A /* AppCoordinator.swift in Sources */,
 				0678B26F242565D100D4973C /* SignInViewController.swift in Sources */,
 				065867A2242E8D7E00AB793B /* Storyboarded.swift in Sources */,
+				5E692F512465C51E00927FFB /* Stubbed.swift in Sources */,
 				5EAC9AE12461E73E006A2A1F /* ImageLoader.swift in Sources */,
 				06A9C538242D3FA8004E9D2A /* InterimFeedViewController.swift in Sources */,
 				0678B26B242565D100D4973C /* AppDelegate.swift in Sources */,
 				066293BC242D4CB000432B46 /* SignInCoordinator.swift in Sources */,
 				06A9C52E242BD8D3004E9D2A /* AppSession.swift in Sources */,
+				5E692F4C2465C44000927FFB /* CreationStub.swift in Sources */,
 				06A9C533242D3879004E9D2A /* JSONDecoderWrapper.swift in Sources */,
 				0678B26D242565D100D4973C /* SceneDelegate.swift in Sources */,
 				0676B5E52432A3B30096CFD2 /* ViewModeled.swift in Sources */,
 				0676B5E12432566D0096CFD2 /* SignInViewModel.swift in Sources */,
 				065867A4242EA07100AB793B /* ErrorResponse.swift in Sources */,
+				5E692F542465C53F00927FFB /* PhotoStub.swift in Sources */,
 				5EAC9ACC2460AE4A006A2A1F /* Creation.swift in Sources */,
 				5EAC9AD12460AF3D006A2A1F /* CreationsListView.swift in Sources */,
 				5EAC9ADB2460B746006A2A1F /* CreationDetailsView.swift in Sources */,
@@ -409,6 +448,7 @@
 				5EAC9AD32460AF9B006A2A1F /* CreationsListViewModel.swift in Sources */,
 				5EAC9ACA2460AE1C006A2A1F /* NetworkPublisher.swift in Sources */,
 				06A9C530242BD91C004E9D2A /* DefaultsKey.swift in Sources */,
+				5E692F482465BD1500927FFB /* MockNetworkPublisher.swift in Sources */,
 				06A9C53E242D4216004E9D2A /* FeedCoordinator.swift in Sources */,
 				5EAC9AE32461E7D5006A2A1F /* AsyncImageView.swift in Sources */,
 				0676B5F72433D0C60096CFD2 /* Config.swift in Sources */,
@@ -417,6 +457,7 @@
 				06A9C53A242D400F004E9D2A /* Coordinator.swift in Sources */,
 				5EAC9ADE2461E6DC006A2A1F /* ImageCache.swift in Sources */,
 				06A9FB64242A6D9D008B59DE /* NetworkClient.swift in Sources */,
+				5E692F572465C56200927FFB /* CreationResponseStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +465,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E692F552465C53F00927FFB /* PhotoStub.swift in Sources */,
 				0678B282242565D200D4973C /* PagerTests.swift in Sources */,
+				5E692F502465C49E00927FFB /* Stubbed.swift in Sources */,
+				5E692F492465BD1500927FFB /* MockNetworkPublisher.swift in Sources */,
+				5E692F4D2465C44000927FFB /* CreationStub.swift in Sources */,
+				5E692F582465C56200927FFB /* CreationResponseStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
