@@ -28,6 +28,7 @@ class CreationsListViewModel: ObservableObject {
 // MARK: - data source methods
 extension CreationsListViewModel {
   func loadCreations() {
+    error = nil
     cancellable = networkPublisher.publishCreations()
       .map { $0.data }
       .receive(on: DispatchQueue.main)

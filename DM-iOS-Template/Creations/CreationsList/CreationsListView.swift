@@ -19,14 +19,15 @@ struct CreationsListView: View {
 
   var body: some View {
     Group {
-      self.viewModel.error.map { error in
-        Text("Error occured: \(error.localizedDescription)")
-      }
-      RefreshableNavigationView(title: "Creations", action: viewModel.loadCreations) {
-        ForEach(self.viewModel.creations, id: \.id) { creation in
-          VStack(alignment: .leading) {
-            CreationsListItemView(viewModel: CreationListItemViewModel(creation: creation))
-            Divider()
+      if self.viewModel.error != nil {
+        ErrorWithRetryView(text: "Error: \(viewModel.error!.localizedDescription)", action: viewModel.loadCreations)
+      } else {
+        RefreshableNavigationView(title: "Creations", action: viewModel.loadCreations) {
+          ForEach(self.viewModel.creations, id: \.id) { creation in
+            VStack(alignment: .leading) {
+              CreationsListItemView(viewModel: CreationListItemViewModel(creation: creation))
+              Divider()
+            }
           }
         }
       }
