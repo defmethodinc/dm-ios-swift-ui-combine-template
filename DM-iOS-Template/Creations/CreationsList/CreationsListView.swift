@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import SwiftUIPullToRefresh
 
 struct CreationsListView: View {
   @ObservedObject var viewModel: CreationsListViewModel
@@ -17,16 +18,19 @@ struct CreationsListView: View {
   }
 
   var body: some View {
-    NavigationView {
-      viewModel.error.map { error in
+    Group {
+      self.viewModel.error.map { error in
         Text("Error occured: \(error.localizedDescription)")
       }
-      List(viewModel.creations, id: \.id) { creation in
-        CreationsListItemView(viewModel: CreationListItemViewModel(creation: creation))
+      RefreshableNavigationView(title: "Creations", action: viewModel.loadCreations) {
+        ForEach(self.viewModel.creations, id: \.id) { creation in
+          VStack(alignment: .leading) {
+            CreationsListItemView(viewModel: CreationListItemViewModel(creation: creation))
+            Divider()
+          }
+        }
       }
-      .onAppear(perform: viewModel.loadCreations)
-      .navigationBarTitle("Creations")
-    }
+    }.onAppear(perform: self.viewModel.loadCreations)
   }
 }
 
