@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Photo: Codable, Identifiable {
+struct Photo: Codable, Identifiable, Equatable {
   var id: String
   var url: String
+
+  static func ==(lhs: Photo, rhs: Photo) -> Bool {
+    return lhs.id == rhs.id && lhs.url == rhs.url
+  }
 }

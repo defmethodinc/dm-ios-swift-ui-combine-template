@@ -12,15 +12,18 @@ import XCTest
 
 class CreationListViewModelObserver: Spy {
   @ObservedObject var viewModel: CreationsListViewModel
+  var creations: [Creation]?
   var cancellable: AnyCancellable?
   var receivedPublishedCount = 0
 
   init(viewModel: CreationsListViewModel) {
     self.viewModel = viewModel
     cancellable = viewModel.$creations
-      .sink(receiveValue: { [weak self] _ in
+      .print()
+      .sink(receiveValue: { [weak self] creations in
         guard let self = self else { return }
         self.receivedPublishedCount += 1
+        self.creations = creations
       })
   }
 
@@ -51,5 +54,6 @@ class CreationListViewModelTests: XCTestCase {
     observer.viewModel.loadCreations()
     XCTAssertEqual(mockNetworkPublisher!.publishCreationsCount, 1)
     XCTAssertEqual(observer.receivedPublishedCount, 1)
+    XCTAssertEqual(observer.creations!, creationResponse.data)
   }
 }
