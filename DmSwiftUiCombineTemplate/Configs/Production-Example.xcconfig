@@ -1,0 +1,7 @@
+// Production.xcconfig
+// Server URL
+API_URL = https:/$()/your-production-api.example.com
+
+// App Settings
+APP_NAME = DmSwiftUiCombineTemplate
+APP_BUNDLE_ID = com.defmethod.DmSwiftUiCombineTemplate
