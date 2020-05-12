@@ -9,7 +9,6 @@
 import SwiftUI
 import Combine
 
-
 class CreationsListViewModel: ObservableObject {
   private var cancellable: AnyCancellable?
   private var networkPublisher: NetworkPublisherCreationsType
@@ -18,10 +17,6 @@ class CreationsListViewModel: ObservableObject {
 
   init(networkPublisher: NetworkPublisherCreationsType = NetworkPublisher()) {
     self.networkPublisher = networkPublisher
-  }
-  
-  deinit {
-    cancellable?.cancel()
   }
 }
 

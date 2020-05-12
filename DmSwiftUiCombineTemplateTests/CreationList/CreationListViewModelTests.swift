@@ -5,55 +5,47 @@
 //  Created by Joshua Book on 5/11/20.
 //  Copyright © 2020 PagerXYZ. All rights reserved.
 //
-import SwiftUI
-import Combine
 import XCTest
 @testable import DmSwiftUiCombineTemplate
-
-class CreationListViewModelObserver: Spy {
-  @ObservedObject var viewModel: CreationsListViewModel
-  var creations: [Creation]?
-  var cancellable: AnyCancellable?
-  var receivedPublishedCount = 0
-
-  init(viewModel: CreationsListViewModel) {
-    self.viewModel = viewModel
-    cancellable = viewModel.$creations
-      .print()
-      .sink(receiveValue: { [weak self] creations in
-        guard let self = self else { return }
-        self.receivedPublishedCount += 1
-        self.creations = creations
-      })
-  }
-
-  func resetCallCounts() {
-    receivedPublishedCount = 0
-  }
-}
 
 class CreationListViewModelTests: XCTestCase {
   var mockNetworkPublisher: MockNetworkPublisher?
   let creationResponse = CreationResponse.stub()
-  var creationListViewModelObserver: CreationListViewModelObserver?
+  var creationsFromNetwork = [Creation]()
 
   override func setUpWithError() throws {
     mockNetworkPublisher = MockNetworkPublisher(creationResponse: creationResponse)
     mockNetworkPublisher!.resetCallCounts()
-  }
-
-  override func tearDownWithError() throws {
-    if let creationListViewModelObserver = creationListViewModelObserver {
-      creationListViewModelObserver.resetCallCounts()
-    }
+    creationsFromNetwork = creationResponse.data
   }
 
   func testLoadCreations() throws {
+    // setup - instantiate viewModel with mockNetworkPublisher
+    // publishing creationResponse
     let viewModel = CreationsListViewModel(networkPublisher: mockNetworkPublisher!)
-    let observer = CreationListViewModelObserver(viewModel: viewModel)
-    observer.viewModel.loadCreations()
+    let expectation = XCTestExpectation(description: "viewModel gets 2 creations")
+    var observedCreations = [Creation]()
+
+    // subscribe to viewModel's published creations
+    // set expectation to fulfill if received data equivalent
+    // to data published by viewModel's networkPublisher
+    let cancellable = viewModel.$creations
+      .sink { creations in
+        observedCreations.append(contentsOf: creations)
+        if observedCreations == self.creationsFromNetwork {
+          expectation.fulfill()
+        }
+    }
+    XCTAssertEqual(observedCreations.count, 0)
+
+    // load up creations from viewModel
+    viewModel.loadCreations()
+
+    // ensure creations are published by viewModel
+    // and that viewModel makes a call to NetworkPublisher#publishCreations
     XCTAssertEqual(mockNetworkPublisher!.publishCreationsCount, 1)
-    XCTAssertEqual(observer.receivedPublishedCount, 1)
-    XCTAssertEqual(observer.creations!, creationResponse.data)
+    wait(for: [expectation], timeout: 2.0)
+    XCTAssertNotNil(cancellable)
+    XCTAssertEqual(observedCreations.count, 2)
   }
 }

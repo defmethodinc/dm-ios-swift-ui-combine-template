@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0678B266242565D000D4973C"
-               BuildableName = "dm-swift-ui-combine-template.app"
+               BuildableName = "DmSwiftUiCombineTemplate.app"
                BlueprintName = "DmSwiftUiCombineTemplate"
                ReferencedContainer = "container:DmSwiftUiCombineTemplate.xcodeproj">
             </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0678B266242565D000D4973C"
-            BuildableName = "dm-swift-ui-combine-template.app"
+            BuildableName = "DmSwiftUiCombineTemplate.app"
             BlueprintName = "DmSwiftUiCombineTemplate"
             ReferencedContainer = "container:DmSwiftUiCombineTemplate.xcodeproj">
          </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0678B266242565D000D4973C"
-            BuildableName = "dm-swift-ui-combine-template.app"
+            BuildableName = "DmSwiftUiCombineTemplate.app"
             BlueprintName = "DmSwiftUiCombineTemplate"
             ReferencedContainer = "container:DmSwiftUiCombineTemplate.xcodeproj">
          </BuildableReference>
