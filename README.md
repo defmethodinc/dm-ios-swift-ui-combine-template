@@ -65,18 +65,9 @@ See article: https://thoughtbot.com/blog/let-s-setup-your-ios-environments
 
 https://stackoverflow.com/questions/33370175/how-do-i-completely-rename-an-xcode-project-i-e-inclusive-of-folders
 
-### TODO
-- Handle Dark Mode
-- Localization/Internationalization
+### Resources/Links
 - Automatically update a repo from the template.
 https://stackoverflow.com/questions/56577184/github-pull-changes-from-a-template-repository/56577320
-- Add Unit Tests with Quick and Nimble
-- Add UITests with Cucumberish
-- Create an auth server that can be spin up with this app
-- Finalize auth flow to be able to sign up/sign in and display a user's profile.
-- Add Build phase before the `Compile Sources phase` to generate code for Environment variables
 - For inspiration about how to make a good boilerplate/template:
 https://www.freecodecamp.org/news/whats-boilerplate-and-why-do-we-use-it-let-s-check-out-the-coding-style-guide-ac2b6c814ee7/
 https://fullstackworld.com/post/what-is-boilerplate-code-why-when-to-use-the-boilerplate-code
-- How to set up CI/CD
-- Improve this README.md
