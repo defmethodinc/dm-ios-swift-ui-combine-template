@@ -1,4 +1,20 @@
-# iOS Template
+# iOS SwiftUI Combine Template
+A template repo for getting setup quickly with an iOS project using the `SwiftUI` and `Combine` frameworks.
+
+This template repo was built off of the original [DM-iOS-Template](https://github.com/defmethodinc/dm-ios-template)
+
+This project is managed through a Github [project board](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards).
+The board for this project is: [here](https://github.com/defmethodinc/dm-ios-swift-ui-combine-template/projects/1).
+
+This project has been built along side a [backend repo](https://github.com/defmethodinc/CreationShelfTemplate). It is a Rails6Api.
+Both are built around the concept of "Creations", a generic or duck-type model in the vein of "todos" or "widgets". It is to hold and show things that people "create".
+
+We have added some basic structure to this application we deem useful such as:
+ - NavigationViews, NavigationLinks, and Lists in SwiftUI
+ - use of publisher/observer pattern in SwiftUI
+ - MVVM as an ObserverableObject
+ - Testing of MVVM publishing
+ - Wrapping networking layer publisher with json decoding of generics
 
 ### Configuration - How to add environment variables?
 
@@ -41,7 +57,7 @@ They can then be shared securely amongst developers.
 See article: https://thoughtbot.com/blog/let-s-setup-your-ios-environments
 
 ### Architecture
-- Coordinators are set up to handle the navigation flow.
+- Application currently makes use of SwiftUI NavigationView and NavigationLink for navigation (A coordinator pattern may be added back in)
 - Configuration is set up for Development, Staging and Production.
 - MVVM is implemented as an example.
 
