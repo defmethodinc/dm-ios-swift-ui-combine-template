@@ -27,7 +27,7 @@ API_URL = http:/$()/localhost:3000
 <key>API_URL</key>
 <string>$(API_URL)</string>
 ```
-3. Add the variable in `Environment.swift`.
+3. Add the variable in `Config.swift`.
 - Add it to the Keys.Plist enum
 ```
 enum Keys {
