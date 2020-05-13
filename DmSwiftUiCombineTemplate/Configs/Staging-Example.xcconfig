@@ -1,0 +1,7 @@
+// Staging.xcconfig
+// Server URL
+API_URL = https:/$()/your-staging-api.example.com
+
+// App Settings
+APP_NAME = DmSwiftUiCombineTemplate (staging)
+APP_BUNDLE_ID = com.defmethod.DmSwiftUiCombineTemplate.staging

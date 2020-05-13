@@ -1,0 +1,7 @@
+// Development.xcconfig
+// Server URL
+API_URL = http:/$()/localhost:3000
+
+// App Settings
+APP_NAME = DmSwiftUiCombineTemplate (dev)
+APP_BUNDLE_ID = com.defmethod.DmSwiftUiCombineTemplate.dev
