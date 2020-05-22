@@ -6,7 +6,7 @@ This template repo was built off of the original [DM-iOS-Template](https://githu
 This project is managed through a Github [project board](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards).
 The board for this project is: [here](https://github.com/defmethodinc/dm-ios-swift-ui-combine-template/projects/1).
 
-This project has been built along side a [backend repo](https://github.com/defmethodinc/CreationShelfTemplate). It is a Rails6Api.
+This project has been built along side a [backend repo](https://github.com/defmethodinc/CreationShelf-Rails6API-Template). It is a Rails6Api.
 Both are built around the concept of "Creations", a generic or duck-type model in the vein of "todos" or "widgets". It is to hold and show things that people "create".
 
 We have added some basic structure to this application we deem useful such as:
