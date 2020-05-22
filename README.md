@@ -39,7 +39,7 @@ enum Keys {
 - Add the getter
 ```
 static let apiUrl: URL = {
-    guard let apiUrlstring = Environment.infoDictionary[Keys.Plist.apiURL] as? String else {
+    guard let apiUrlstring = Config.infoDictionary[Keys.Plist.apiURL] as? String else {
       fatalError("\(Keys.Plist.apiURL) not set in plist for this environment")
     }
     guard let url = URL(string: apiUrlstring) else {
